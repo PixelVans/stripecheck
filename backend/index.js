@@ -15,8 +15,9 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY); // Test secret key
 
 
 
-
-
+app.get('/', (req, res) => {
+  res.send('Welcome to the backend! This express server will create stripe checkout sessions :)'); // or any custom message or response
+});
 
 
 app.post('/', async (req, res) => {
