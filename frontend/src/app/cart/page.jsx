@@ -28,7 +28,7 @@ const Page = () => {
     const headers = {
      "Content-Type": "application/json"
     }
-    const response = await fetch(`http://localhost:5000/`, {
+    const response = await fetch(`https://stripecheck.onrender.com/`, {
       method: "POST",
       headers: headers,
       body: JSON.stringify(body)
@@ -47,14 +47,14 @@ const Page = () => {
     
   return (
     <div className='text-center mt-9 lg:mx-[100px]'>
-      <Link href={'/'} className='hover:text-red-500 bg-slate-100 shadow-md p-2'>
+      <Link href={'/'} className='hover:text-red-500 bg-slate-100 shadow-md p-2 text-black'>
        Back Home
       </Link>
 
       <div className='text-center flex flex-wrap gap-2 mt-9'>
         {cart.map((item, index) => (
           <div key={index} className='flex flex-col border w-[150px] mx-auto p-4 bg-yellow-200 rounded-lg'>
-            <label>{item.name}</label>
+            <label className='text-black'>{item.name}</label>
            
             <button
               onClick={() => handleRemoveCart(item.id)}
@@ -67,7 +67,7 @@ const Page = () => {
           <div className='mt-5   w-[150px] lg:w-[200px]  mx-auto bg-green-600 rounded-lg shadow-lg'>
               <h1 className='mt-5 p-2 text-lg font-bold text-white'>checkout</h1>
         <button onClick={makePayment}
-          className='bg-slate-100 p-2 rounded-lg mb-3 mt-2 hover:bg-slate-300'>Pay $ {totalCost}</button>
+          className='bg-slate-100 p-2 rounded-lg mb-3 mt-2 text-black hover:bg-slate-300'>Pay $ {totalCost}</button>
         
           </div>
     </div>

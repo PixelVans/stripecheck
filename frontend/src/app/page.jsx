@@ -42,7 +42,7 @@ function Page() {
 
   return (
     <div className='text-center mt-9 lg:mx-[100px]'>
-      <Link href='/cart' className='hover:text-red-500 bg-slate-100 shadow-md p-2'>
+      <Link href='/cart' className='hover:text-red-500 bg-slate-100 shadow-md p-2 text-black'>
         View Cart
       </Link>
 
@@ -51,10 +51,10 @@ function Page() {
           const isInCart = cart.some(cartItem => cartItem.id === item.id);
           return (
             <div key={item.id} className='flex flex-col border w-[150px] lg:w-[200px] mx-auto p-4 bg-slate-100 rounded-lg shadow-md gap-2 mt-3'>
-              <label>{item.name}</label>
+              <label className='text-black'>{item.name}</label>
               <button
                 onClick={() => handleAddToCart(item.id)}
-                className={`w-[100px] rounded-lg mx-auto ${isInCart ? 'bg-green-300 cursor-not-allowed' : 'bg-yellow-300 hover:opacity-85'}`}
+                className={`w-[100px] text-black rounded-lg mx-auto ${isInCart ? 'bg-green-300 cursor-not-allowed' : 'bg-yellow-300 hover:opacity-85'}`}
                 disabled={isInCart}
               >
                 {isInCart ? 'Added' : 'Add to cart'}
