@@ -45,12 +45,15 @@ function Page() {
       <Link href='/cart' className='hover:text-red-500 bg-slate-100 shadow-md p-2 text-black'>
         View Cart
       </Link>
+      
+      {/* Add your h1 with the message */}
+      <h1 className='text-xl font-bold mt-5 text-white'>Note: This app is used solely for testing Stripe functionality.</h1>
 
       <div className='text-center flex flex-wrap gap-2 mt-9'>
         {list.map((item) => {
           const isInCart = cart.some(cartItem => cartItem.id === item.id);
           return (
-            <div key={item.id} className='flex flex-col border w-[150px] lg:w-[200px] mx-auto p-4 bg-slate-100 rounded-lg shadow-md gap-2 mt-3'>
+            <div key={item.id} className='flex flex-col border w-[150px] lg:w-[170px] mx-auto p-4 bg-slate-100 rounded-lg shadow-md gap-2 mt-3'>
               <label className='text-black'>{item.name}</label>
               <button
                 onClick={() => handleAddToCart(item.id)}
