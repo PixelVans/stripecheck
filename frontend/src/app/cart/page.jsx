@@ -28,7 +28,7 @@ const Page = () => {
     const headers = {
      "Content-Type": "application/json"
     }
-    const response = await fetch(`http://localhost:5000/create-checkout-session`, {
+    const response = await fetch(`http://localhost:5000/`, {
       method: "POST",
       headers: headers,
       body: JSON.stringify(body)

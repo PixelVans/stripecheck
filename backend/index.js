@@ -19,7 +19,7 @@ const stripe = Stripe(process.env.STRIPE_SECRET_KEY); // Test secret key
 
 
 
-app.post('/create-checkout-session', async (req, res) => {
+app.post('/', async (req, res) => {
     const { products } = req.body;
   
     // Map products to line items
@@ -68,23 +68,8 @@ app.post('/create-checkout-session', async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Start server on port 5000
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
